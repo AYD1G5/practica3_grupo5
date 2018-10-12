@@ -23,7 +23,11 @@
           <td>{{ $usuario->nit }}</td>
           <td>{{ $usuario->direccion_envio }}</td>
           <td>{{ $usuario->email }}</td>
-          <td>{!! link_to('EditarCliente2/'.$usuario->id, 'Editar', ['class' => 'btn btn-warning']) !!}</td>
+          @if($usuario->id != 1)
+            <td>{!! link_to('EditarCliente2/'.$usuario->id, 'Editar', ['class' => 'btn btn-warning']) !!}</td>
+          @else
+            <td>NO</td>
+          @endif
         </tr>
       @endforeach
     </tbody>
