@@ -5,21 +5,28 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Redirect; //---> Sirve para poder utilizar los modelos
+use Illuminate\Support\Facades\Hash; //---> Sirve para poder utilizar los modelos
 
 class ClientesController extends Controller
 {
 
     public function CrearCliente(Request $request){
+      $user = User::where('email', '=', $request->correo)->first();
+    if ($user === null) {
       $usuario = new User();
       $usuario->name = $request->nombres;
       $usuario->apellido = $request->apellidos;
       $usuario->nit = $request->nit;
       $usuario->direccion_envio = $request->direnvio;
       $usuario->email = $request->correo;
-      $usuario->password = $request->pass;
+      $usuario->password = Hash::make($request->pass);
       $usuario->rol = 1;
       $usuario->save();
-      return view('CRUDClientes.CrearCliente');
+      $usuarios = User::all();
+      return view('CRUDClientes.EditarCliente')->with('usuarios', $usuarios);
+    }else{
+      return "El correo ". $request->correo . " se ha registrado con otra cuenta.";
+    }
     }
 
     public function MostrarFormCrearCliente(){
