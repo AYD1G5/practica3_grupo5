@@ -74,23 +74,29 @@ class CarritoController extends Controller
             ->with('notice', 'El producto ya esta agregado');
         }
         $prod = Producto::find($id);
-        if(!$this->func->verificarStock($prod->id_producto, $request->input('cantidad'))){
+        if($request->input('cantidad')>0){
+            if(!$this->func->verificarStock($prod->id_producto, $request->input('cantidad'))){
+                return Redirect::to('/Carrito/ListarProductos')
+                ->with('notice', 'No tenemos suficientes productos en Stock');
+            }
+    
+            $productocarrito = new Carrito_Producto();
+            $productocarrito->id_carrito = $carrito_usuario->id_carrito;
+            $productocarrito->id_producto = $prod->id_producto;
+            $productocarrito->nombre_producto = $prod->nombre;
+            $productocarrito->ruta_imagen = $prod->ruta_imagen;
+            $productocarrito->cantidad = $request->input('cantidad');
+            $productocarrito->precio = $prod->precio;
+            #$productocarrito->subtotal = 
+            $productocarrito->save();
+    
+            $this->func->aumentarCarro(Auth::id(), 1);
+            return Redirect::to('/Carrito/ListarProductos');
+        }else{
             return Redirect::to('/Carrito/ListarProductos')
-            ->with('notice', 'No tenemos suficientes productos en Stock');
+            ->with('notice', 'El valor debe ser superior o igual a 0');
         }
-
-        $productocarrito = new Carrito_Producto();
-        $productocarrito->id_carrito = $carrito_usuario->id_carrito;
-        $productocarrito->id_producto = $prod->id_producto;
-        $productocarrito->nombre_producto = $prod->nombre;
-        $productocarrito->ruta_imagen = $prod->ruta_imagen;
-        $productocarrito->cantidad = $request->input('cantidad');
-        $productocarrito->precio = $prod->precio;
-        #$productocarrito->subtotal = 
-        $productocarrito->save();
-
-        $this->func->aumentarCarro(Auth::id(), 1);
-        return Redirect::to('/Carrito/ListarProductos');
+       
     }
 
     public function actualizarcantidad(Request $request, $id){

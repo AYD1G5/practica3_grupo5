@@ -6,27 +6,27 @@
 <div class="jumbotron">
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">NOMBRES</label>
-  <input name="nombres" type="text" class="form-control" value={{$usuario->name}} id="inputDefault1">
+  <input name="nombres" type="text" class="form-control" value={{$usuario->name}} id="nombres">
 </div>
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">APELLIDOS</label>
-  <input  name="apellidos" type="text" class="form-control" value={{$usuario->apellido}} id="inputDefault2">
+  <input  name="apellidos" type="text" class="form-control" value={{$usuario->apellido}} id="apellidos">
 </div>
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">NIT</label>
-  <input name="nit" type="text" class="form-control" value={{$usuario->nit}} id="inputDefault3">
+  <input name="nit" type="text" class="form-control" value={{$usuario->nit}} id="nit">
 </div>
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">DIRECCION DE ENVIO</label>
-  <input name="direnvio"  type="text" class="form-control" value={{$usuario->direccion_envio}} id="inputDefault4">
+  <input name="direnvio"  type="text" class="form-control" value={{$usuario->direccion_envio}} id="direnvio">
 </div>
   <div class="form-group">
   <label for="exampleInputEmail1">CORREO ELECTRONICO</label>
-  <input name="correo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value={{$usuario->email}}>
+  <input name="correo" type="email" class="form-control" id="correo" aria-describedby="emailHelp" value={{$usuario->email}}>
 </div>
   <div class="form-group">
   <label class="col-form-label" for="inputDefault">CONTRASEÑA</label>
-  <input name="pass" type="text" class="form-control" value={{$usuario->password}} id="inputDefault5">
+  <input name="pass" id ="pass" type="text" class="form-control" value={{$usuario->password}} id="inputDefault5">
 </div>
 <hr class="my-4">
 
@@ -39,7 +39,7 @@
   </div>
 </fieldset>
 
-<button type="submit" class="btn btn-primary btn-lg btn-block">EDITAR CLIENTE</button>
+<button type="submit" id="EditarCliente" name="EditarCliente" class="btn btn-primary btn-lg btn-block">EDITAR CLIENTE</button>
 </div>
 </form>
 @endsection

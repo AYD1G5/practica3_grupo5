@@ -70,7 +70,7 @@ class ClientesController extends Controller
             ))->first();
             $usuario->delete();
       $usuarios = User::all();
-      return view('CRUDClientes.EliminarCliente')->with('usuarios', $usuarios);
+      return view('CRUDClientes.EditarCliente')->with('usuarios', $usuarios);
     }
 
 

@@ -6,28 +6,28 @@
   <div class="jumbotron">
     <div class="form-group">
     <label class="col-form-label" for="inputDefault">NOMBRES</label>
-    <input name="nombres" type="text" class="form-control" placeholder="INGRESE SUS NOMBRES" id="inputNombre">
+    <input name="nombres" type="text" class="form-control" placeholder="INGRESE SUS NOMBRES" id="nombres">
   </div>
     <div class="form-group">
     <label class="col-form-label" for="inputDefault">APELLIDOS</label>
-    <input name="apellidos" type="text" class="form-control" placeholder="INGRESE SUS APELLIDOS" id="inputApellido">
+    <input name="apellidos" type="text" class="form-control" placeholder="INGRESE SUS APELLIDOS" id="apellidos">
   </div>
     <div class="form-group">
     <label class="col-form-label" for="inputDefault">NIT</label>
-    <input name="nit" type="text" class="form-control" placeholder="INGRESE SU NUMERO DE IDENTIFICACION TRIBUTARIA" id="inputNit">
+    <input name="nit" type="text" class="form-control" placeholder="INGRESE SU NUMERO DE IDENTIFICACION TRIBUTARIA" id="nit">
   </div>
     <div class="form-group">
     <label class="col-form-label" for="inputDefault">DIRECCION DE ENVIO</label>
-    <input name="direnvio" type="text" class="form-control" placeholder="INGRESE SU DIRECCION" id="inputDireccion">
+    <input name="direnvio" type="text" class="form-control" placeholder="INGRESE SU DIRECCION" id="direnvio">
   </div>
     <div class="form-group">
     <label for="exampleInputEmail1">CORREO ELECTRONICO</label>
-    <input name="correo" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="INGRESE SU CORREO ELETRONICO">
+    <input name="correo" type="email" class="form-control" id="correo" aria-describedby="emailHelp" placeholder="INGRESE SU CORREO ELETRONICO">
     <small id="emailHelp" class="form-text text-muted">Nunca compartiremos su correo electrónico con nadie más.</small>
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">CONTRASEÑA</label>
-    <input name="pass" type="password" class="form-control" id="exampleInputPassword1" placeholder="INGRESE SUS PASSWORD">
+    <input name="pass" type="password" class="form-control" id="pass" placeholder="INGRESE SUS PASSWORD">
   </div>
   <hr class="my-4">
 
@@ -46,7 +46,7 @@
     </div>
   </fieldset>
 
-  <button type="submit" class="btn btn-primary btn-lg btn-block">CREAR CLIENTE</button>
+  <button name="CrearCliente" id="CrearCliente" type="submit" class="btn btn-primary btn-lg btn-block">CREAR CLIENTE</button>
   </div>
 
 </form>

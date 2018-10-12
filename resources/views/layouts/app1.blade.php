@@ -175,7 +175,7 @@
                     </a>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="{{ route('logout') }}"
+                        <a id="logout" name ="logout" alt="logout" text="logout" class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
                             {{ __('Logout') }}
@@ -209,17 +209,17 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                   
+
                     <H1>Cuenta Bloqueada</H1>
                     No tienes permiso para logearte, ponte en comunicacion con un Administrador!
                </div>
-               
+
             </div>
         </div>
     </div>
-    
+
 </div>
- 
+
 @endif
 @endguest
 
