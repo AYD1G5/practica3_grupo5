@@ -5,9 +5,7 @@
   <h1 class="display-3">Compra de Productos al Proveedor</h1>
   <p class="lead">Ingrese la información necesaria para crear el registro</p>
   <div>
-		<a href="{{url('/ProveedorProducto/finalizar')}}" class="btn btn-info">
-							Realizar compra
-             <span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
+		<a href="{{url('/ProveedorProducto/finalizar')}}" class="btn btn-info">Realizar compra<span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span> 
         </a>
     </div>
   <hr class="my-4">

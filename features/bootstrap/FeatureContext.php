@@ -32,4 +32,16 @@ class FeatureContext extends MinkContext implements Context
     }
 
 
+
+    /**
+     * @When I Select a Product :arg1
+     */
+    public function iSelectAProduct($arg1)
+    {
+    
+        $select = $this->fixStepArgument('id_prod');
+        $option = $this->fixStepArgument($arg1);
+        $this->getSession()->getPage()->selectFieldOption($select, $option);
+    
+    }
 }
