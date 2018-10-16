@@ -43,8 +43,10 @@ Scenario: Tratar de registrar a un nuevo cliente con un correo electronico el cu
     Then I should see "El correo willyslider@gmail.com se ha registrado con otra cuenta."
 
 
-Scenario: Tratar de registrar a un nuevo cliente con un correo electronico el cual pertenezca a
-          otro cliente dentro de la aplicacion, como resultado nos debera de mostrar un mensaje de error.
+Scenario: Que el cliente quien es un usuario de la aplicacion ha cambiado su direccion de correo
+          con el cual se registro y desea que utilizar esta nueva direccion de correo para poder
+          loguearse en la aplicacion, como resultado podremos loguear al mismo cliente con el correo nuevo
+          y no permitir que entre con el correo anterior.
 
       Given  I am on "http://127.0.0.1:8000/login"
         And I fill in "email" with "admin@gmail.com"
@@ -60,8 +62,9 @@ Scenario: Tratar de registrar a un nuevo cliente con un correo electronico el cu
         Then I go to "http://127.0.0.1:8000/Admin"
 
 
-Scenario: Tratar de eliminar a un cliente que se encuentre dentro de la aplicacion, como resultado
-          nos debera de listar todos los usuarios existentes.
+Scenario: Dar de baja a un cliente, lo que implica eliminarlo de la base de datos y por lo tanto tambien
+          dentro de la aplicacion, como resultado nos debera de listar todos los usuarios existentes,
+          excepto el que se acaba de eliminar.
 
       Given  I am on "http://127.0.0.1:8000/login"
         And I fill in "email" with "admin@gmail.com"
