@@ -12,22 +12,22 @@
 
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Nombre de Producto</label>
-  <input name="nombre" type="text" class="form-control" placeholder="Nombre" id="inputDefault">
+  <input name="nombre" type="text" class="form-control" placeholder="Nombre" id="nombre">
 </div>
 
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Descripción de Producto</label>
-  <input name="desc" type="text" class="form-control" placeholder="Descripción" id="inputDefault">
+  <input name="desc" type="text" class="form-control" placeholder="Descripción" id="desc">
 </div>
 
 <div class="form-group">
   <label class="col-form-label" for="inputDefault">Cantidad Disponible</label>
-  <input name="cantidad" type="text" class="form-control" placeholder="Cantidad" id="inputDefault">
+  <input name="cantidad" type="text" class="form-control" placeholder="Cantidad" id="cant">
 </div>
 
 <div class="form-group">
       <label for="exampleInputFile">Imagen de Producto</label>
-      <input type="file" class="form-control-file" name="archivo" id="exampleInputFile" aria-describedby="fileHelp">
+      <input type="file" class="form-control-file" name="archivo" id="file" aria-describedby="fileHelp">
       <small id="fileHelp" class="form-text text-muted">Seleccione una imagen para el producto que se está creando.</small>
 </div>
 
@@ -38,7 +38,7 @@
       <div class="input-group-prepend">
         <span class="input-group-text">Q.</span>
       </div>
-      <input name="float" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <input name="float" type="text" class="form-control" aria-label="Amount (to the nearest dollar)" id = "prec">
       <div class="input-group-append">
         <span class="input-group-text">.00</span>
       </div>
@@ -57,7 +57,7 @@
   </div>
 </fieldset>
 
-<button type="submit" class="btn btn-primary btn-lg btn-block">EDITAR CLIENTE</button>
+<button id = "editar" name = "editar" type="submit" class="btn btn-primary btn-lg btn-block">EDITAR CLIENTE</button>
 </div>
 </form>
 
