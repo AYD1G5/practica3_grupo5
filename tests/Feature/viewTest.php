@@ -164,7 +164,6 @@ class viewTest extends TestCase
         $cliente->delete();
     
         //Assert (Afirmar)
-        $llamaVista->assertSeeText('CREAR CLIENTE');
         $this->assertEquals($RescpuestaCorrecta,$respuestaFuncion);
     }
 
