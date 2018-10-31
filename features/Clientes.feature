@@ -53,11 +53,11 @@ Scenario: Que el cliente quien es un usuario de la aplicacion ha cambiado su dir
         And I fill in "password" with "12345678"
         And I press "Login"
         And I am on "http://127.0.0.1:8000/EditarCliente2/2"
-        And I fill in "correo" with "willy@gmail.com"
+        And I fill in "correo" with "willy_3@gmail.com"
         When I press "EditarCliente"
         And I go to "http://127.0.0.1:8000/logout"
         And I am on "http://127.0.0.1:8000/login"
-        And I fill in "email" with "willy@gmail.com"
+        And I fill in "email" with "willy_3@gmail.com"
         And I fill in "password" with "12345678"
         Then I go to "http://127.0.0.1:8000/Admin"
 
