@@ -43,23 +43,7 @@ Scenario: Tratar de registrar a un nuevo cliente con un correo electronico el cu
     Then I should see "El correo willyslider@gmail.com se ha registrado con otra cuenta."
 
 
-Scenario: Que el cliente quien es un usuario de la aplicacion ha cambiado su direccion de correo
-          con el cual se registro y desea que utilizar esta nueva direccion de correo para poder
-          loguearse en la aplicacion, como resultado podremos loguear al mismo cliente con el correo nuevo
-          y no permitir que entre con el correo anterior.
 
-      Given  I am on "http://127.0.0.1:8000/login"
-        And I fill in "email" with "admin@gmail.com"
-        And I fill in "password" with "12345678"
-        And I press "Login"
-        And I am on "http://127.0.0.1:8000/EditarCliente2/2"
-        And I fill in "correo" with "willy_3@gmail.com"
-        When I press "EditarCliente"
-        And I go to "http://127.0.0.1:8000/logout"
-        And I am on "http://127.0.0.1:8000/login"
-        And I fill in "email" with "willy_3@gmail.com"
-        And I fill in "password" with "12345678"
-        Then I go to "http://127.0.0.1:8000/Admin"
 
 
 Scenario: Dar de baja a un cliente, lo que implica eliminarlo de la base de datos y por lo tanto tambien
