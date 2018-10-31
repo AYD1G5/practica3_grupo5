@@ -108,7 +108,7 @@ class eCommerceTest extends TestCase
         $prod->save();
         
         //Act (Actuar)
-        $disminucion=150;
+        $disminucion=50;
         $respuestaFuncion=$funciones->disminuirStock($prod->id_producto,$disminucion);
         $RescpuestaCorrecta=$prod->cantidad_disponible-$disminucion;
         $prod->delete();
