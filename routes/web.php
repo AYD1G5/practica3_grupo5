@@ -81,3 +81,6 @@ Route::post('/ProveedorProducto','FacturaCompraController@guardar');
 Route::get('/ProveedorProducto', 'FacturaCompraController@index');
 Route::get('/ProveedorProducto/eliminar/{id}', 'FacturaCompraController@eliminar');
 Route::get('/ProveedorProducto/finalizar', 'FacturaCompraController@finalizar');
+
+Route::get('/NewFuncion', 'NewFuncionController@NewFuncion');
+
