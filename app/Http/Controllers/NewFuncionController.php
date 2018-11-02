@@ -12,4 +12,15 @@ class NewFuncionController extends Controller
         //    return view('CrearGrupo.CrearGrupo');
 
     }
+    public function vuelto($total,$pagar)
+    {
+        if($pagar<$total)
+        {
+            return "-1";
+        }
+        else
+        {
+            return $pagar-$total;
+        }
+    }
 }
