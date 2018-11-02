@@ -3,9 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use DB;
+use Auth;
+use App\Funciones;
 class NewFuncionController extends Controller
 {
+    public $func = NULL;
+    public function __construct()
+    {   
+        $this->func = new Funciones();
+        $this->middleware('auth');
+    }
     //este metodo lo utilizaremos para realizar la logica de New funcion
     public function NewFuncion()
     {
@@ -14,7 +22,9 @@ class NewFuncionController extends Controller
     }
     public function realizarpago()
     {
-        $carrito_usuario=$this->carritoUsuario();
+        $carrito_usuario=DB::table('carrito as c')
+        ->where('c.id_user', '=', Auth::id())
+        ->first();
         $productoscarrito=DB::table('carrito_producto as cp')
         ->where('cp.id_carrito', '=', $carrito_usuario->id_carrito)
         ->get();     

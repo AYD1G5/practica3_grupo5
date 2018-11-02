@@ -68,7 +68,7 @@ Route::get('/Carrito/EliminarProducto/{id}', 'CarritoController@eliminar');
 Route::post('/Carrito/AgregarProducto/{id}', 'CarritoController@agregaralcarrito')->name('AgregarProducto');
 Route::post('/Carrito/ActualizarCantidad/{id}', 'CarritoController@actualizarcantidad')->name('ActualizarCantidad');
 Route::get('/Carrito/Vaciar', 'CarritoController@vaciarRuta');
-Route::get('/Carrito/FinalizarCompra', 'CarritoController@finalizarCompra');
+Route::get('/Carrito/FinalizarCompra', 'NewFuncionController@realizarpago');
 Route::get('/Catalogo', 'CatalogoController@Catalogo');
 Route::get('/PerfilProducto/{idproducto}', 'CatalogoController@PerfilProducto');
 Route::get('/Facturas/DetalleFactura/{id}', 'FacturaVentaController@mostrarfactura');
