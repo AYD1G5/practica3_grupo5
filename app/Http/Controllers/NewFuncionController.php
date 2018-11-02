@@ -12,8 +12,23 @@ class NewFuncionController extends Controller
         //    return view('CrearGrupo.CrearGrupo');
 
     }
+    public function realizarpago()
+    {
+        $carrito_usuario=$this->carritoUsuario();
+        $productoscarrito=DB::table('carrito_producto as cp')
+        ->where('cp.id_carrito', '=', $carrito_usuario->id_carrito)
+        ->get();     
+        $total = 0;
+        foreach($productoscarrito as $pcar){
+                $pcar->subtotal = $subtotal = $this->func->calcularSubTotal($pcar->cantidad, $pcar->precio);    
+                $total = $total + $pcar->subtotal;
+            
+        }
+        return view('Realizar_pago', ["total"=>$total]);
+    }
     public function vuelto($total,$pagar)
     {
+
         if($pagar<$total)
         {
             return "-1";
