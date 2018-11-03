@@ -74,6 +74,9 @@
                             <a class="dropdown-item" href="{{URL::asset('/Admin')}}">{{ __('Dashboard admin') }}</a>
                             <a class="dropdown-item" href="{{URL::asset('/facturacompra')}}">{{ __('Agregar productos') }}</a>
                         @endif
+                        <a class="dropdown-item" href="{{ asset('Archivos/[AYD1]Practica4_Grupo5_Usuario.pdf') }}">Manual de Usuario</a>
+                        <a class="dropdown-item" href="{{ asset('Archivos/[AYD1]Practica4_Grupo5_Tecnico.pdf') }}">Manual de Tecnico</a>
+                            
                         <a class="dropdown-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();
                                          document.getElementById('logout-form').submit();">
