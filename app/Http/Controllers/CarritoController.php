@@ -27,6 +27,12 @@ class CarritoController extends Controller
         ->first();
     }
 
+    public function controladorCommit(){
+        return $carrito_usuario=DB::table('carrito as c')
+        ->where('c.id_user', '=', Auth::id())
+        ->first();
+    }
+
     public function vaciarCarro(){
         $carrito_usuario=$this->carritoUsuario();
         $us = User::find(Auth::id());
