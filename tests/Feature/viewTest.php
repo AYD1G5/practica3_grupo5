@@ -857,7 +857,7 @@ class viewTest extends TestCase
         $prodCarr->subtotal=$prod->precio*10;
         $prodCarr->save();
 
-        $RespuestaCorrecta=302; //Codigo HTTP de respuesta correcta
+        $RespuestaCorrecta=200; //Codigo HTTP de respuesta correcta
         
         //Act (Actuar)
         $llamaVista=$this->get('Carrito/FinalizarCompra');
@@ -897,7 +897,7 @@ class viewTest extends TestCase
                 ]);
                 //Establecer respuesta correcta
 
-        $RespuestaCorrecta=302; //Codigo HTTP de respuesta correcta
+        $RespuestaCorrecta=200; //Codigo HTTP de respuesta correcta
         
         //Act (Actuar)
         $llamaVista=$this->get('Carrito/FinalizarCompra');
