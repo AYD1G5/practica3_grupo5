@@ -10,6 +10,7 @@
 
   <hr class="my-3">
   
+    <P>{{$mensaje}}
     <form method="POST">
 
     <input type="hidden" name="_token" value="{{ csrf_token() }}">

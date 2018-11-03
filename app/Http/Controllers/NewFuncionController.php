@@ -39,12 +39,12 @@ class NewFuncionController extends Controller
         $vuelto=$this->vuelto($total,$pago);
         if($vuelto==-1)
         {
-            die("Error");
+            $mensaje="El monto no es suficiente";
+            return view('Realizar_pago', ["total"=>$total,"mensaje"=>$mensaje ]);
         }
         else
         {
-            //die($vuelto);
-            return Redirect::to('/FinalizarCompra');
+            return view('vuelto', ["vuelto"=>$vuelto,"total"=>$total,"pago"=>$pago]);
         }
 
         
@@ -63,11 +63,10 @@ class NewFuncionController extends Controller
                 $total = $total + $pcar->subtotal;
             
         }
-        return view('Realizar_pago', ["total"=>$total]);
+        return view('Realizar_pago', ["total"=>$total,"mensaje"=>""]);
     }
     public function vuelto($total,$pagar)
     {
-
         if($pagar<$total)
         {
             return "-1";
